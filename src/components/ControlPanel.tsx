@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Plus, Play, Scissors, RotateCcw, CircleDot, ArrowRight } from 'lucide-react';
 import { GraphNode, GraphEdge } from '@/types/graph';
+import neuralIcon from '@/assets/neural.png';
 
 interface ControlPanelProps {
   nodes: GraphNode[];
@@ -61,9 +62,12 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
   const canRunFlow = source && sink && edges.length > 0;
 
   return (
-    <div className="w-80 h-full bg-card border-r border-border p-4 overflow-y-auto space-y-4">
+    <div className="w-80 h-full bg-card border-r border-border p-4 overflow-y-auto space-y-4 flex flex-col">
       <div className="space-y-1">
-        <h1 className="text-xl font-bold text-gradient">Network Flow</h1>
+        <div className="flex items-center gap-2">
+          <img src={neuralIcon} alt="Network Flow" className="w-8 h-8 invert" />
+          <h1 className="text-xl font-bold text-gradient">Network Flow</h1>
+        </div>
         <p className="text-xs text-muted-foreground">Ford-Fulkerson Algorithm Visualizer</p>
       </div>
 
@@ -256,6 +260,12 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
           {source && sink && edges.length === 0 && 'Add at least one edge'}
         </p>
       )}
+
+      <div className="mt-auto pt-4">
+        <p className="text-xs text-muted-foreground text-center">
+          Made by Cherif Bourechache
+        </p>
+      </div>
     </div>
   );
 };
