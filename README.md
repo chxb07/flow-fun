@@ -1,6 +1,6 @@
 Project Name: Network Flow Visualizer
 
-Description:
+
 This is a small interactive web application that allows users to:
 
 Draw a network flow graph by adding nodes and edges
@@ -16,11 +16,8 @@ Display the minimum cut visually
 Features:
 
 -Dynamic graph creation and editing
-
 -Edge capacity visualization
-
 -Highlights augmenting paths (optional)
-
 -Shows max flow value and min cut edges
 
 This project is built with:
